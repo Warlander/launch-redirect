@@ -2,6 +2,43 @@
 
 Redirects to a configured startup scene when pressing Play in the Unity Editor, so multi-scene projects always initialize from the correct entry point.
 
+# Installation
+
+## Via Git URL
+
+Open **Window → Package Manager**, click **+**, and choose **Add package from git URL**.
+
+To install the latest version:
+```
+https://github.com/Warlander/launch-redirect.git
+```
+
+To install a specific release, append the tag:
+```
+https://github.com/Warlander/launch-redirect.git#1.0.0
+```
+
+## Via Scoped Registry
+
+Add the Warlogic registry to your `Packages/manifest.json`:
+
+```json
+{
+  "scopedRegistries": [
+    {
+      "name": "Warlogic",
+      "url": "https://upm.maciejcyranowicz.com",
+      "scopes": ["com.warlogic"]
+    }
+  ],
+  "dependencies": {
+    "com.warlogic.launchredirect": "1.0.0"
+  }
+}
+```
+
+Alternatively, open **Window → Package Manager**, click **+**, choose **Add package by name**, and enter `com.warlogic.launchredirect`.
+
 # Setup
 
 1. Open **Edit → Project Settings → Launch Redirect**.
