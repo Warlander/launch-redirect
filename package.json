@@ -2,5 +2,9 @@
   "name": "com.warlogic.launchredirect",
   "displayName": "Launch Redirect",
   "version": "1.0.0",
-  "description": "Redirects to a configured startup scene when pressing Play in the Unity Editor."
+  "description": "Redirects to a configured startup scene when pressing Play in the Unity Editor.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Warlander/launch-redirect.git"
+  }
 }
