@@ -3,8 +3,24 @@
   "displayName": "Launch Redirect",
   "version": "1.0.1",
   "description": "Redirects to a configured startup scene when pressing Play in the Unity Editor.",
+  "unity": "2019.1",
+  "author": {
+    "name": "Maciej Cyranowicz",
+    "url": "https://github.com/Warlander"
+  },
+  "license": "MIT",
+  "keywords": [
+    "editor",
+    "scene",
+    "startup",
+    "redirect",
+    "play-mode",
+    "workflow"
+  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/Warlander/launch-redirect.git"
-  }
+  },
+  "changelogUrl": "https://github.com/Warlander/launch-redirect/blob/main/CHANGELOG.md",
+  "documentationUrl": "https://github.com/Warlander/launch-redirect/blob/main/README.md"
 }
