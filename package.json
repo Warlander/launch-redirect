@@ -9,15 +9,7 @@
     "url": "https://github.com/Warlander"
   },
   "license": "MIT",
-  "keywords": [
-    "editor",
-    "scene",
-    "startup",
-    "redirect",
-    "play-mode",
-    "workflow"
-  ],
-  "repository": {
+"repository": {
     "type": "git",
     "url": "https://github.com/Warlander/launch-redirect.git"
   },
