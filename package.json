@@ -1,7 +1,7 @@
 {
   "name": "com.warlogic.launchredirect",
   "displayName": "Launch Redirect",
-  "version": "1.0.4",
+  "version": "1.1.0",
   "description": "Redirects to a configured startup scene when pressing Play in the Unity Editor.",
   "unity": "2019.1",
   "author": {

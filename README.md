@@ -15,7 +15,7 @@ https://github.com/Warlander/launch-redirect.git
 
 To install a specific release, append the tag:
 ```
-https://github.com/Warlander/launch-redirect.git#1.0.4
+https://github.com/Warlander/launch-redirect.git#1.1.0
 ```
 
 ## Via Scoped Registry
@@ -32,7 +32,7 @@ Add the Warlogic registry to your `Packages/manifest.json`:
     }
   ],
   "dependencies": {
-    "com.warlogic.launchredirect": "1.0.4"
+    "com.warlogic.launchredirect": "1.1.0"
   }
 }
 ```
@@ -42,8 +42,9 @@ Alternatively, open **Window → Package Manager**, click **+**, choose **Add pa
 # Setup
 
 1. Open **Edit → Project Settings → Launch Redirect**.
-2. Assign the **Startup Scene** field to the scene that should always run first (e.g. a loading/bootstrapper scene).
-3. Leave the field empty to disable redirection — pressing Play will behave normally.
+2. Enable the **Enable Redirect** toggle to turn redirection on.
+3. Assign the **Startup Scene** field to the scene that should always run first (e.g. a loading/bootstrapper scene).
+4. *(Optional)* Add scenes or directories to **Excluded Scenes** to prevent redirect from triggering on them.
 
 The setting is stored in `ProjectSettings/LaunchRedirectSettings.json` and should be committed to source control so all team members share the same startup scene.
 
@@ -56,5 +57,7 @@ When you press Play from any scene other than the configured startup scene, the 
 3. Resume playing from the startup scene.
 
 When play mode exits, the editor automatically reopens the scene you were editing before the redirect.
+
+Redirect can be temporarily disabled with the **Enable Redirect** toggle, or bypassed per-scene (or per-directory) using **Excluded Scenes**.
 
 No code changes are required — the redirect is driven entirely by the Project Settings entry.
