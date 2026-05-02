@@ -27,6 +27,11 @@ namespace Warlogic.LaunchRedirect
 
         private static void OnPlayModeStateChanged(PlayModeStateChange playMode)
         {
+            if (!LaunchRedirectSettings.IsEnabled())
+            {
+                return;
+            }
+
             string startupScenePath = GetStartupScenePath();
             if (string.IsNullOrEmpty(startupScenePath))
             {
@@ -34,6 +39,11 @@ namespace Warlogic.LaunchRedirect
             }
 
             string currentScenePath = SceneManager.GetActiveScene().path;
+            if (LaunchRedirectSettings.IsSceneExcluded(currentScenePath))
+            {
+                return;
+            }
+
             if (playMode == PlayModeStateChange.ExitingEditMode && currentScenePath != startupScenePath)
             {
                 PreviousScene = currentScenePath;
