@@ -15,7 +15,7 @@ https://github.com/Warlander/launch-redirect.git
 
 To install a specific release, append the tag:
 ```
-https://github.com/Warlander/launch-redirect.git#1.1.0
+https://github.com/Warlander/launch-redirect.git#1.2.0
 ```
 
 ## Via Registry Browser
@@ -43,7 +43,7 @@ Add the Warlogic registry to your `Packages/manifest.json`:
     }
   ],
   "dependencies": {
-    "com.warlogic.launchredirect": "1.1.0"
+    "com.warlogic.launchredirect": "1.2.0"
   }
 }
 ```

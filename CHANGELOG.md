@@ -4,6 +4,11 @@ All notable changes to this package will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
+## [1.2.0] - 2026-05-05
+
+### Added
+- Added `LaunchRedirectSettings.IgnoreBlacklistOnNextLaunch` flag. When set to `true`, the next Play request will bypass the excluded-scenes blacklist and redirect to the startup scene. The flag automatically resets after use.
+
 ## [1.1.0] - 2026-05-02
 
 ### Added
