@@ -27,6 +27,9 @@ namespace Warlogic.LaunchRedirect
 
         private static void OnPlayModeStateChanged(PlayModeStateChange playMode)
         {
+            bool ignoreBlacklist = LaunchRedirectSettings.IgnoreBlacklistOnNextLaunch;
+            LaunchRedirectSettings.IgnoreBlacklistOnNextLaunch = false;
+
             if (!LaunchRedirectSettings.IsEnabled())
             {
                 return;
@@ -39,7 +42,7 @@ namespace Warlogic.LaunchRedirect
             }
 
             string currentScenePath = SceneManager.GetActiveScene().path;
-            if (LaunchRedirectSettings.IsSceneExcluded(currentScenePath))
+            if (LaunchRedirectSettings.IsSceneExcluded(currentScenePath) && !ignoreBlacklist)
             {
                 return;
             }

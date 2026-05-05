@@ -10,6 +10,13 @@ namespace Warlogic.LaunchRedirect
     public static class LaunchRedirectSettings
     {
         private const string SettingsFilePath = "ProjectSettings/LaunchRedirectSettings.json";
+        private const string IgnoreBlacklistKey = "Warlander_LaunchRedirect_IgnoreBlacklist";
+
+        public static bool IgnoreBlacklistOnNextLaunch
+        {
+            get => SessionState.GetBool(IgnoreBlacklistKey, false);
+            set => SessionState.SetBool(IgnoreBlacklistKey, value);
+        }
 
         [Serializable]
         private class SettingsData
