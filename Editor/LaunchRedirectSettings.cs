@@ -18,23 +18,15 @@ namespace Warlogic.LaunchRedirect
             set => SessionState.SetBool(IgnoreBlacklistKey, value);
         }
 
-        [Serializable]
-        private class SettingsData
-        {
-            public bool enabled = true;
-            public string startupScenePath = "";
-            public string[] excludedScenes = Array.Empty<string>();
-        }
-
         public static bool IsEnabled()
         {
-            SettingsData data = LoadData();
+            LaunchRedirectSettingsData data = LoadData();
             return data != null && data.enabled;
         }
 
         public static string LoadStartupScenePath()
         {
-            SettingsData data = LoadData();
+            LaunchRedirectSettingsData data = LoadData();
             return string.IsNullOrEmpty(data?.startupScenePath) ? null : data.startupScenePath;
         }
 
@@ -45,7 +37,7 @@ namespace Warlogic.LaunchRedirect
                 return false;
             }
 
-            SettingsData data = LoadData();
+            LaunchRedirectSettingsData data = LoadData();
             if (data?.excludedScenes == null)
             {
                 return false;
@@ -79,7 +71,7 @@ namespace Warlogic.LaunchRedirect
             return false;
         }
 
-        private static SettingsData LoadData()
+        private static LaunchRedirectSettingsData LoadData()
         {
             if (!File.Exists(SettingsFilePath))
             {
@@ -87,7 +79,7 @@ namespace Warlogic.LaunchRedirect
             }
 
             string json = File.ReadAllText(SettingsFilePath);
-            SettingsData data = JsonUtility.FromJson<SettingsData>(json);
+            LaunchRedirectSettingsData data = JsonUtility.FromJson<LaunchRedirectSettingsData>(json);
             if (data == null)
             {
                 return null;
@@ -101,7 +93,7 @@ namespace Warlogic.LaunchRedirect
             return data;
         }
 
-        private static void SaveData(SettingsData data)
+        private static void SaveData(LaunchRedirectSettingsData data)
         {
             if (data.excludedScenes == null)
             {
@@ -119,7 +111,7 @@ namespace Warlogic.LaunchRedirect
                 label = "Launch Redirect",
                 guiHandler = _ =>
                 {
-                    SettingsData data = LoadData() ?? new SettingsData();
+                    LaunchRedirectSettingsData data = LoadData() ?? new LaunchRedirectSettingsData();
 
                     EditorGUI.BeginChangeCheck();
 

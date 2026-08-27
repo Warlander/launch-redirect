@@ -1,7 +1,9 @@
 {
     "name": "Warlogic.LaunchRedirect.Editor",
     "rootNamespace": "",
-    "references": [],
+    "references": [
+        "Warlogic.LaunchIntercept.Editor"
+    ],
     "includePlatforms": ["Editor"],
     "excludePlatforms": [],
     "allowUnsafeCode": false,
