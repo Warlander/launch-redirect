@@ -7,6 +7,7 @@ namespace Warlogic.LaunchRedirect
     {
         public bool enabled = true;
         public string startupScenePath = "";
+        public bool redirectOnEmptyScene = false;
         public string[] excludedScenes = Array.Empty<string>();
     }
 }

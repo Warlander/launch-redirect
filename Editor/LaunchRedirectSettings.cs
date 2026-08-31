@@ -30,6 +30,12 @@ namespace Warlogic.LaunchRedirect
             return string.IsNullOrEmpty(data?.startupScenePath) ? null : data.startupScenePath;
         }
 
+        public static bool IsRedirectOnEmptySceneEnabled()
+        {
+            LaunchRedirectSettingsData data = LoadData();
+            return data != null && data.redirectOnEmptyScene;
+        }
+
         public static bool IsSceneExcluded(string scenePath)
         {
             if (string.IsNullOrEmpty(scenePath))
@@ -141,6 +147,11 @@ namespace Warlogic.LaunchRedirect
                     {
                         data.startupScenePath = "";
                     }
+
+                    data.redirectOnEmptyScene = EditorGUILayout.Toggle(
+                        new GUIContent("Redirect on Empty Scene",
+                            "When enabled, redirect also triggers from untitled or unsaved scenes (e.g. straight after opening Unity)."),
+                        data.redirectOnEmptyScene);
 
                     EditorGUILayout.Space(10);
                     EditorGUILayout.LabelField("Excluded Scenes", EditorStyles.boldLabel);

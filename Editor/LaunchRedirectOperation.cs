@@ -17,7 +17,7 @@ namespace Warlogic.LaunchRedirect
             string currentScenePath = SceneManager.GetActiveScene().path;
             bool redirect = LaunchRedirectSettings.IsEnabled() &&
                             !string.IsNullOrEmpty(startupScenePath) &&
-                            !string.IsNullOrEmpty(currentScenePath) &&
+                            (!string.IsNullOrEmpty(currentScenePath) || LaunchRedirectSettings.IsRedirectOnEmptySceneEnabled()) &&
                             currentScenePath != startupScenePath &&
                             (!LaunchRedirectSettings.IsSceneExcluded(currentScenePath) || ignoreBlacklist);
 

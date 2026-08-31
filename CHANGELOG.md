@@ -5,6 +5,11 @@ All notable changes to this package will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
+## [2.1.0] - 2026-09-01
+
+### Added
+- Added **Redirect on Empty Scene** toggle in Project Settings. When enabled, redirect also triggers from untitled or unsaved scenes (e.g. straight after opening Unity). Disabled by default to preserve previous behavior.
+
 ## [2.0.0] - 2026-08-27
 
 ### Changed

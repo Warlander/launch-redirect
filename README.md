@@ -1,6 +1,6 @@
 # Launch Redirect
 
-Launch Redirect replaces Launch Intercept's default launch operation and uses Unity's Play Mode start scene to launch from the configured startup scene. The scene open for editing remains unchanged. Unsaved scenes enter Play without redirection.
+Launch Redirect replaces Launch Intercept's default launch operation and uses Unity's Play Mode start scene to launch from the configured startup scene. The scene open for editing remains unchanged. Unsaved scenes enter Play without redirection unless **Redirect on Empty Scene** is enabled.
 
 # Installation
 
@@ -43,7 +43,7 @@ Add the Warlogic registry to your `Packages/manifest.json`:
     }
   ],
   "dependencies": {
-    "com.warlogic.launchredirect": "2.0.0"
+    "com.warlogic.launchredirect": "2.1.0"
   }
 }
 ```
@@ -55,7 +55,8 @@ Then open **Window > Package Manager** and look for `com.warlogic.launchredirect
 1. Open **Edit → Project Settings → Launch Redirect**.
 2. Enable the **Enable Redirect** toggle to turn redirection on.
 3. Assign the **Startup Scene** field to the scene that should always run first (e.g. a loading/bootstrapper scene).
-4. *(Optional)* Add scenes or directories to **Excluded Scenes** to prevent redirect from triggering on them.
+4. *(Optional)* Enable **Redirect on Empty Scene** to also redirect when pressing Play from an untitled or unsaved scene (e.g. straight after opening Unity).
+5. *(Optional)* Add scenes or directories to **Excluded Scenes** to prevent redirect from triggering on them.
 
 The setting is stored in `ProjectSettings/LaunchRedirectSettings.json` and should be committed to source control so all team members share the same startup scene.
 
@@ -69,6 +70,6 @@ When you press Play, Launch Intercept runs registered preparation operations in 
 
 The editing scene is never replaced, so Unity returns to it automatically when Play Mode exits. If the configured startup scene cannot be loaded, Launch Redirect logs an error and remains in Edit mode.
 
-Redirect can be temporarily disabled with the **Enable Redirect** toggle, or bypassed per-scene (or per-directory) using **Excluded Scenes**.
+Redirect can be temporarily disabled with the **Enable Redirect** toggle, or bypassed per-scene (or per-directory) using **Excluded Scenes**. Empty-scene bypass can be lifted with **Redirect on Empty Scene**.
 
 No code changes are required — the redirect is driven entirely by the Project Settings entry.
